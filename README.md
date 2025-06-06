@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+## InstaSpots-reactAssignment
+converting insta-spots  from javascript to react
+### Getting Started
+1. Clone the repository: `git clone https://github.com/Edith-Anurika-Monday1/instaSpots-reactAssignment.git`
+2. Install dependencies: `yarn install` or `npm install`
+3. start the application: `yarn start` or `npm start`
+>>>>>>> d9ad3c434befab26621d85560457fd857f44c8d7
