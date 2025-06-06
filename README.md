@@ -1,4 +1,4 @@
-# instaSpots-reactAssignment
+## instaSpots-reactAssignment
 converting insta-spots  from javascript to react
 ### Getting Started
 1. Clone the repository: `git clone https://https://github.com/Edith-Anurika-Monday1/instaSpots-reactAssignment.git`
