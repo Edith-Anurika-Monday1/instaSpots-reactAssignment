@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const editProf = ({
+const EditProf = ({
   show,
   onClose,
   name,
@@ -89,4 +89,4 @@ const editProf = ({
   );
 };
 
-export default editProf;
+export default EditProf;

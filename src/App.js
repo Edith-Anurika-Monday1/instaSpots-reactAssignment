@@ -1,15 +1,15 @@
 import './App.css';
 import InstaSpot from './main';
-import headerSection from './components/headerSection';
-import footerSection from './components/footerSection';
+import headerSection from './Components/headerSection.jsx';
+import footerSection from './Components/footerSection.jsx';
 
 
 function App() {
   return (
     <div>
-      <Header />
+      <headerSection />
       <InstaSpot />
-      <Footer />
+      <footerSection />
     </div>
   );
 }

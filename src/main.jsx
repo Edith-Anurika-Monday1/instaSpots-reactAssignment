@@ -1,10 +1,14 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./insta.css";
-import pictures from "./components/pictures";
-import editProf from "./components/editProf";
-import createPost from "./components/createPost";
-import profileDetails from "./components/profileDetails";
-const pictures = [
+import Pictures from "./Components/pictures.jsx";
+import EditProf from "./Components/editProf.jsx";
+import HeartButton from "./Components/heartButton.jsx";
+import ProfileDetails from "./Components/profileDetails.jsx";
+import HeaderSection from "./Components/headerSection.jsx"
+import FooterSection from "./Components/footerSection.jsx"
+import CreatePost from "./Components/createPost.jsx";
+
+const photos = [
     {
        id: "valThorens",
        src: "../Assets/images/Vals-Thorens.png",
@@ -43,11 +47,12 @@ const pictures = [
     description: "A mountain house shrouded in fog, surrounded by trees and of course mountains. Depending on your vibe, it could be mean solitude. A cabin perfect for a getaway",
 },
 ].map((img) => ({ ...img, liked: false }));
+
 const InstaSpot = () => {
     const [idPreview, setidPreview] = useState(null);
     const [showModifyModal, setShowModifyModal] = useState(false);
     const [showCreatePostModal, setShowCreatePostModal] = useState(false);
-    const [pics, setPics] = useState(firstPics);
+    const [pics, setPics] = useState(photos);
     const [name, setName] = useState("");
     const [job, setJob] = useState("");
     const [image, setImage] = useState(null);
@@ -98,7 +103,9 @@ const InstaSpot = () => {
   
     return (
       <div>
-        <profileDetails
+        <HeaderSection />
+
+        <ProfileDetails
           profile={profile}
           setShowModifyModal={setShowModifyModal}
           setShowCreatePostModal={setShowCreatePostModal}
@@ -106,13 +113,13 @@ const InstaSpot = () => {
   
         <div className="thin-line"></div>
   
-        <createPost
+        <CreatePost
           show={showCreatePostModal}
           onClose={() => setShowCreatePostModal(false)}
           onAddPost={AddPost}
         />
   
-        <editProf
+        <EditProf
           show={showModifyModal}
           onClose={() => setShowModifyModal(false)}
           name={name}
@@ -123,14 +130,20 @@ const InstaSpot = () => {
           handleSave={handleSave}
         />
   
-        <pictures
+        <Pictures
           pics={[...pics, ...posts]}
           heartToggle={heartToggle}
           idPreview={idPreview}
           setidPreview={setidPreview}
         />
+        <HeartButton
+      liked={photos.liked}
+      onToggle={() => heartToggle(photos.id)}
+    />
   
         <div className="thin-line"></div>
+        <FooterSection />
+        
       </div>
     );
   };

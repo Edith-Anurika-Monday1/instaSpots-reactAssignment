@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const createPost = ({ show, onClose, onAddPost }) => {
+const CreatePost = ({ show, onClose, onAddPost }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [title, setTitle] = useState("");
   const [data, setData] = useState(null);
@@ -36,7 +36,7 @@ const createPost = ({ show, onClose, onAddPost }) => {
   const Submit = (e) => {
     e.preventDefault();
 
-    const image = file ? URL.createObjectURL(file) : imageUrl.trim();
+    const image = data ? URL.createObjectURL(data) : imageUrl.trim();
 
     if (!image) {
       alert("Please upload an image or enter an image URL");
@@ -45,9 +45,9 @@ const createPost = ({ show, onClose, onAddPost }) => {
 
     onAddPost({
       id: Date.now().toString(),
-      src: img,
-      title: caption || "Untitled",
-      description: description || "Untitled",
+      src: image,
+      title: title || "Untitled",
+      description: info || "Untitled",
       liked: false,
     });
 
@@ -62,7 +62,7 @@ const createPost = ({ show, onClose, onAddPost }) => {
   if (!show) return null;
 
   return (
-    <div className="modal-overlay" onClick={OverlayClick}>
+    <div className="modal-overlay" onClick={overlayClick}>
       <dialog
         className="newPostDialog"
         open
@@ -121,4 +121,4 @@ const createPost = ({ show, onClose, onAddPost }) => {
   );
 };
 
-export default createPost;
+export default CreatePost;

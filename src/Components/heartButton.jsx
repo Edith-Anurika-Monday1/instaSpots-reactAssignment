@@ -1,6 +1,7 @@
-import "./insta.css";
+import "./../insta.css";
 
-const heartButton = ({ liked, onToggle }) => {
+
+const HeartButton = ({ liked, onToggle }) => {
   return (
     <i
       className={liked ? "fa-solid fa-heart" : "fa-regular fa-heart"}
@@ -10,4 +11,4 @@ const heartButton = ({ liked, onToggle }) => {
   );
 };
 
-export default heartButton;
+export default HeartButton;

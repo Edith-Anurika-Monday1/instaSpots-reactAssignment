@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import heartButton from "./heartButton";
 
-const pictures = ({ pics, heartToggle, idPreview, setIdPreview }) => {
+const Pictures = ({ pics, heartToggle, idPreview, setIdPreview }) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const pictures = ({ pics, heartToggle, idPreview, setIdPreview }) => {
     return () => document.removeEventListener("keydown", Escape);
   }, [idPreview, setIdPreview]);
 
-  const OverlayClick = (e) => {
+  const overlayClick = (e) => {
     if (e.target.classList.contains("modal-overlay")) {
       setIdPreview(null);
     }
@@ -47,7 +47,7 @@ const pictures = ({ pics, heartToggle, idPreview, setIdPreview }) => {
             </div>
 
             {idPreview === id && (
-              <div className="modal-overlay" onClick={OverlayClick}>
+              <div className="modal-overlay" onClick={overlayClick}>
                 <dialog
                   open
                   className="preview-dialog"
@@ -68,4 +68,4 @@ const pictures = ({ pics, heartToggle, idPreview, setIdPreview }) => {
   );
 };
 
-export default pictures;
+export default Pictures;

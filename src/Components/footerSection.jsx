@@ -1,4 +1,4 @@
-const footerSection = () => {
+const FooterSection = () => {
     return (
       <footer>
         <div>2024 &copy; Spots</div>
@@ -6,4 +6,4 @@ const footerSection = () => {
     );
   };
   
-  export default footerSection;
+  export default FooterSection;
