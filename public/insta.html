@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta Spot</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/preview-card.css" />
+    <link rel="stylesheet" href="./css/new-post.css" />
+    <!-- ICON LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <img src="./Assets/icons/Spots-Logo.svg" />
+    </header>
+
+    <!-- profile -->
+
+    <section class="profile">
+      <img
+        class="profileImage"
+        src="./Assets/images/Bessie-Coleman.png"
+        alt="Profile Image"
+      />
+
+      <div class="profileDetails">
+        <div class="profileNameAndJob">
+          <h2 class="profileName">Bessie Coleman</h2>
+          <p class="profileJobTitle">Civil Aviator</p>
+        </div>
+        <p class="profileEdit">
+          <img
+            class="EditIcon"
+            src="./Assets/icons/Edit-Profile-Icon-Light.svg"
+            alt="Edit Image Icon"
+          />
+          Edit Profile
+        </p>
+      </div>
+
+      <button class="profileBtn">
+        <img
+          class="newPostIcon"
+          src="./Assets/icons/New-Post-Icon.svg"
+          alt="New Post Icon"
+        />
+        New Post
+      </button>
+
+      <!-- ============NEW POST MODAL================= -->
+      <dialog id="newPostDialog">
+        <button type="button" class="closeDialog" style="float: right">
+          ✖
+        </button>
+        <div class="wrapperrr">
+          <h2>New Post</h2>
+          <span style="font-size: 1rem">Upload Image or Paste URL</span>
+          <form class="formm" id="newPostForm">
+            <input type="text" name="text" placeholder="Enter name" required />
+            <input
+              type="file"
+              name="imageFile"
+              accept="image/*"
+              placeholder="https://example.com/image.jpg"
+            />
+            <input type="url" name="imageUrl" placeholder="Image URL" />
+            <button class="submitBtn" type="submit">Add Card</button>
+          </form>
+        </div>
+      </dialog>
+    </section>
+    <div class="thin-line"></div>
+
+    <!-- ============PROFILE EDIT MODAL================= -->
+    <dialog class="modal" id="editModal">
+      <div class="flex">
+        <div class="modal-content">
+          <p class="closeBtn">❌</p>
+          <h2>Edit Profile</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Name" id="editName" required />
+            <label for="job">Job Title</label>
+            <input type="text" placeholder="Job Title" id="editJob" required />
+
+            <input
+              type="file"
+              name="imageFile"
+              id="editImage"
+              accept="image/*"
+            />
+
+            <button id="saveProfile">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- NEW GALLERY HTML CODE -->
+    <section class="gallery_container">
+      <div class="gallery_grid">
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/Vals-Thorens.png"
+            alt="Val Thorens"
+            class="img1"
+            onclick="showPreview('valThorens')"
+          />
+          <div class="content">
+            <p id="text1">Val Thorens</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <!-- modal with id valThorens -->
+          <dialog id="valThorens" class="preview-dialog">
+            <img
+              src="../Assets/images/Vals-Thorens.png"
+              alt="Val Thorens"
+              class="modal-img"
+            />
+            <p class="modal-title">Val Thorens</p>
+            <p class="modal-description">
+              A ski town in the French Alps, known for its stunning slopes and
+              vibrant après-ski scene.
+            </p>
+            <button onclick="closePreview('valThorens')">Close</button>
+          </dialog>
+        </div>
+
+        <!--second image-->
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/Restaurant-Terrace.png"
+            alt="Restaurant terrace"
+            class="img1"
+            onclick="showPreview('restaurantTerrace')"
+          />
+          <div class="content">
+            <p id="text2">Restaurant terrace</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <!-- modal with id restaurantTerrace -->
+          <dialog id="restaurantTerrace" class="preview-dialog">
+            <img
+              src="../Assets/images/Restaurant-Terrace.png"
+              alt="Restaurant terrace"
+              class="modal-img"
+            />
+            <p class="modal-title">Restaurant terrace</p>
+            <p class="modal-description">
+              A restaurant terrace dressed in green and yellow - an ambience of
+              grandeur and elegance. A promise of fine dining and a good time.
+            </p>
+
+            <button onclick="closePreview('restaurantTerrace')">Close</button>
+          </dialog>
+        </div>
+
+        <!--third image-->
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/An-outdoor-cafe.png"
+            alt="An outdoor cafe"
+            class="img1"
+            onclick="showPreview('outdoorCafe')"
+          />
+          <div class="content">
+            <p id="text3">An outdoor cafe</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <!-- modal with id outdoorCafe -->
+          <dialog id="outdoorCafe" class="preview-dialog">
+            <img
+              src="../Assets/images/An-outdoor-cafe.png"
+              alt="An outdoor cafe"
+              class="modal-img"
+            />
+            <p class="modal-title">An outdoor cafe</p>
+            <p class="modal-description">
+              An outdoor cafe buzzing softly with laughter and conversation. The
+              perfect spot to unwind and savour the moment.
+            </p>
+            <button onclick="closePreview('outdoorCafe')">Close</button>
+          </dialog>
+        </div>
+
+        <!--fourth image-->
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/A-very-long-bridge-over-the-forest.png"
+            alt="A very long bridge, over the forest..."
+            class="img1"
+            onclick="showPreview('longBridge')"
+          />
+          <div class="content">
+            <p id="text4">A very long bridge, over the forest...</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <dialog id="longBridge" class="preview-dialog">
+            <img
+              src="../Assets/images/A-very-long-bridge-over-the-forest.png"
+              alt="A very long bridge, over the forest..."
+              class="modal-img"
+            />
+            <p class="modal-title">A very long bridge, over the forest...</p>
+            <p class="modal-description">
+              A very long bridge, suspended over the forest. Can you dare to
+              cross it?
+            </p>
+            <button onclick="closePreview('longBridge')">Close</button>
+          </dialog>
+        </div>
+
+        <!--fifth image-->
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/Tunnel-with-the-morning-light.png"
+            alt="Tunnel with morning light"
+            class="img1"
+            onclick="showPreview('tunnelMorningLight')"
+          />
+          <div class="content">
+            <p id="text5">Tunnel with morning light</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <dialog id="tunnelMorningLight" class="preview-dialog">
+            <img
+              src="../Assets/images/Tunnel-with-the-morning-light.png"
+              alt="Tunnel with morning light"
+              class="modal-img"
+            />
+            <p class="modal-title">Tunnel with morning light</p>
+            <p class="modal-description">
+              Iron-framed glass walls, morning light spilling from their sides -
+              glinting, scattering. A breathtaking sight.
+            </p>
+            <button onclick="closePreview('tunnelMorningLight')">Close</button>
+          </dialog>
+        </div>
+
+        <!--sixth image-->
+        <div class="gallery_image">
+          <img
+            src="../Assets/images/Mountain-house.png"
+            alt="Mountain house"
+            class="img1"
+            onclick="showPreview('mountainHouse')"
+          />
+          <div class="content">
+            <p id="text6">Mountain house</p>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <dialog id="mountainHouse" class="preview-dialog">
+            <img
+              src="../Assets/images/Mountain-house.png"
+              alt="Mountain house"
+              class="modal-img"
+            />
+            <p class="modal-title">Mountain house</p>
+            <p class="modal-description">
+              A mountain house shrouded in fog, surrounded by trees and of
+              course mountains. Depending on your vibe, it could be mean
+              solitude. A cabin perfect for a getaway.
+            </p>
+            <button onclick="closePreview('mountainHouse')">Close</button>
+          </dialog>
+        </div>
+      </div>
+    </section>
+
+    <div class="thin-line"></div>
+
+    <!-- footer  -->
+    <footer>
+      <div>2024 &copy; Spots</div>
+    </footer>
+
+    <script src="./script/profile.js"></script>
+    <script src="./script/liked-btn.js"></script>
+    <script src="./script/new-post.js"></script>
+    <script src="./script/preview-card.js"></script>
+  </body>
+</html>
